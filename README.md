@@ -19,7 +19,6 @@
  > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include
  > * Why is it important or interesting to you?
  >   * Chess is fun, it is simple and beautiful at the same time because of how complex it can get with the variety of algorithms the player can choose from to reach the goal of   winning. Chess just feels like the type of game to be simple and somewhat complex which would turn out to be a very helpful experience and good practice to use our C++ understanding so far.
 >We’re also planning to implement some very simple form of AI in order to make this a player vs. computer game 
@@ -30,8 +29,7 @@
  > * What will be the input/output of your project?
  >   * The input of the project would be the moves that the player would like to do and it would keep on going until either “king” becomes unable to move which would output a winner or a stalemate.
  
- > * What are the three design patterns you will be using. For each design pattern you must:
- >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
+ > * What are the three design patterns you will be using?
  
  > Creational Pattern: Abstract Factory
 	Chess pieces can be generalized as black or white, so the set of eight pawns, two knights, two bishops, two rooks, one queen, one king would have a family of either black or white. At the same time there would be another family of either dead or alive where pieces that are on the board are in the alive family while those who have been overtaken by the opponent would be in the dead family.
@@ -41,8 +39,6 @@
 
  > Structural Pattern: Decorator
 	This strategy pattern lets you attach new behaviors to objects by placing the objects inside wrapper objects that change the behavior. This would be used when a pawn is able to promote after reaching the end of the opposite side of the board and the player has the ability to transform it either to a rook, bishop, knight, or queen.
-
- > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
