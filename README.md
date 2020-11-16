@@ -19,6 +19,7 @@
  > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
 ## Project Description
+ >   * This program will allow the user to play chess as a player. It should have a variety of chess pieces that move differently, and the player should be able to "win" at the game. (Possibly player might play against AI) Most likely the application will require two players to play in the same application while taking turns.
  > ### Why is it important or interesting to you?
  >   * Chess is fun, it is simple and beautiful at the same time because of how complex it can get with the variety of algorithms the player can choose from to reach the goal of   winning. Chess just feels like the type of game to be simple and somewhat complex which would turn out to be a very helpful experience and good practice to use our C++ understanding so far.
 >We’re also planning to implement some very simple form of AI in order to make this a player vs. computer game 
