@@ -49,11 +49,11 @@
  >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
 ## Class Diagram
  <a href="https://ibb.co/qBq5PgN"><img src="https://i.ibb.co/VVnmPCg/Chess-Project-OMT.png" alt="Chess-Project-OMT" border="0" /></a>
- > The move() function is implemented using the Strategy Pattern (abstract class MoveStrategy).  
- > The different types of pieces are created using the Abstract Factory Pattern (abstract class PieceFactory).  
- > Special cases where pawns are allowed to move two spaces instead of one and promote are implemented using the State Pattern.  
- > All of these patterns inferface through ChessPiece, which is a parent class to all types of chess pieces.  
- > The game is run in main through a ChessBoard object, which contains methods to set the board, display the board, and run the game. It also contains a vector of pointers to ChessPieces to store all pieces on the board.  
+ > * The move() function is implemented using the Strategy Pattern (abstract class MoveStrategy).  
+ > * The different types of pieces are created using the Abstract Factory Pattern (abstract class PieceFactory).  
+ > * Special cases where pawns are allowed to move two spaces instead of one and promote are implemented using the State Pattern.  
+ > * All of these patterns inferface through ChessPiece, which is a parent class to all types of chess pieces.  
+ > * The game is run in main through a ChessBoard object, which contains methods to set the board, display the board, and run the game. It also contains a vector of pointers to ChessPieces to store all pieces on the board.  
  
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
