@@ -31,11 +31,11 @@
  
  > ### What are the three design patterns you will be using?
  >   #### Creational Pattern: Abstract Factory
-	* Chess pieces can be generalized as black or white, so the set of eight pawns, two knights, two bishops, two rooks, one queen, one king would have a family of either black or white. At the same time there would be another family of either dead or alive where pieces that are on the board are in the alive family while those who have been overtaken by the opponent would be in the dead family.
+ >	* Chess pieces can be generalized as black or white, so the set of eight pawns, two knights, two bishops, two rooks, one queen, one king would have a family of either black or white. At the same time there would be another family of either dead or alive where pieces that are on the board are in the alive family while those who have been overtaken by the opponent would be in the dead family.
  >   #### Behavioral Pattern: Strategy
-	* The strategy pattern allows you to define a family of algorithms that belong to separate classes. This will be useful for creating methods to move different pieces with different types of movement patterns. All movement patterns will be placed in their own class that will interact with every type of chess piece with the same interface.
+ >	* The strategy pattern allows you to define a family of algorithms that belong to separate classes. This will be useful for creating methods to move different pieces with different types of movement patterns. All movement patterns will be placed in their own class that will interact with every type of chess piece with the same interface.
  >   #### Structural Pattern: Decorator
-	* This strategy pattern lets you attach new behaviors to objects by placing the objects inside wrapper objects that change the behavior. This would be used when a pawn is able to promote after reaching the end of the opposite side of the board and the player has the ability to transform it either to a rook, bishop, knight, or queen.
+ >	* This strategy pattern lets you attach new behaviors to objects by placing the objects inside wrapper objects that change the behavior. This would be used when a pawn is able to promote after reaching the end of the opposite side of the board and the player has the ability to transform it either to a rook, bishop, knight, or queen.
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
