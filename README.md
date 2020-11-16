@@ -50,7 +50,7 @@
 ## Class Diagram
  > Include a class diagram(s) for each design pattern and a description of the diagram(s). This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
  
- ![Class Diagram]<a href="https://ibb.co/qBq5PgN"><img src="https://i.ibb.co/VVnmPCg/Chess-Project-OMT.png" alt="Chess-Project-OMT" border="0" /></a>
+ <a href="https://ibb.co/qBq5PgN"><img src="https://i.ibb.co/VVnmPCg/Chess-Project-OMT.png" alt="Chess-Project-OMT" border="0" /></a>
  
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
