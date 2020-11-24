@@ -1,35 +1,32 @@
-# Chess?
+# PokeGuys
  > Authors: \<[Jorge Peng](https://github.com/Shynih)\>
             \<[Brandon Trieu](https://github.com/btrieu)\>
             \<[Nicholas Chang](https://github.com/nickthechang)\>
  
 ## Project Description
- >   * This program will allow the user to play chess as a player. It should have a variety of chess pieces that move differently, and the player should be able to "win" at the game. (Possibly player might play against AI) Most likely the application will require two players to play in the same application while taking turns.
+ >   * This program is a small game inspired from the game Pokemon, where the player partners up with ElectroGuy and fights other TypeGuys that have two different sets of moves. The player is also able to heal once every fight and have the option to run away.
  > ### Why is it important or interesting to you?
- >   * Chess is fun, it is simple and beautiful at the same time because of how complex it can get with the variety of algorithms the player can choose from to reach the goal of   winning. Chess just feels like the type of game to be simple and somewhat complex which would turn out to be a very helpful experience and good practice to use our C++ understanding so far.
->We’re also planning to implement some very simple form of AI in order to make this a player vs. computer game 
-
+ >   * Pokemon is just a childhood game which inspired us to create something similar which we thought we could implement using design patterns to use what we have learned in class.
  > ### What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * [C++](https://en.cppreference.com/w/) - General high-level programming language.
  
  > ### What will be the input/output of your project?
- >   * The input of the project would be the moves that the player would like to do and it would keep on going until either “king” becomes unable to move which would output a winner or a stalemate.
+ >   * The overall game will have a menu where it will prompt the user for some basic information such as a nickname and gender. Later, during the battle phase the game will output another menu with move options which the user will input the order and the game will carry it out. The game will have a simple story and end after the first battle.
  
  > ### What are the three design patterns you will be using?
  >   #### Creational Pattern: Abstract Factory
- >	* Chess pieces can be generalized as black or white, so the set of eight pawns, two knights, two bishops, two rooks, one queen, one king would have a family of either black or white. At the same time there would be another family of either dead or alive where pieces that are on the board are in the alive family while those who have been overtaken by the opponent would be in the dead family.
+ >	* This design pattern will allow us to create different types of creatures to battle against more efficiently. This pattern helps give the player more variety when going against the creatures. There will be different opponents randomly.
  >   #### Behavioral Pattern: Strategy
- >	* The strategy pattern allows you to define a family of algorithms that belong to separate classes. This will be useful for creating methods to move different pieces with different types of movement patterns. All movement patterns will be placed in their own class that will interact with every type of chess piece with the same interface.
- >   #### Structural Pattern: Decorator
- >	* This strategy pattern lets you attach new behaviors to objects by placing the objects inside wrapper objects that change the behavior. This would be used when a pawn is able to promote after reaching the end of the opposite side of the board and the player has the ability to transform it either to a rook, bishop, knight, or queen.
+ >	* The PokeGuys have two different types of moves, a normal attack and a typed attack. The normal attack is just a regular attack that damages the enemy depending on a fixed damage number. The typed attack has a lower attack damage but will multiply if the opponent results to be weak against a certain element. The strategy pattern will allow to carry different algorithms for each attack.
+ >   #### Structural Pattern: Composite
+ >	* Inside the strategy pattern attack, we additionally have classes to calculate damage numbers, Op, add, mult, to encapsulate numbers into a hierarchy and call the highest number in the hierarchy to evaluate.
 
 ## Class Diagram
  > <a href="https://ibb.co/qBq5PgN"><img src="https://i.ibb.co/VVnmPCg/Chess-Project-OMT.png" alt="Chess-Project-OMT" border="0" /></a>
- > * The move() function is implemented using the Strategy Pattern (abstract class MoveStrategy).  
- > * The different types of pieces are created using the Abstract Factory Pattern (abstract class PieceFactory).  
- > * Special cases where pawns are allowed to move two spaces instead of one and promote are implemented using the State Pattern.  
- > * All of these patterns inferface through ChessPiece, which is a parent class to all types of chess pieces.  
- > * The game is run in main through a ChessBoard object, which contains methods to set the board, display the board, and run the game. It also contains a vector of pointers to ChessPieces to store all pieces on the board.  
+ > * The attack function is using the Strategy Pattern (abstract class Attack()) which can call the NormalAttackStrategy attack function or TypedAttackStrategy attack function.
+ > * Each set of moves for each PokeGuy is created with the Factory Method, moveFactory() which the Guy class calls and sets its Neutral and Typed attack.
+ > * Lastly, the Composite Pattern is called inside the Attack strategy where damage is grouped in Base* and which the evaluate function represents the top number in the hierarchy.
+ > * The game will be run in main.
  
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
