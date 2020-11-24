@@ -14,7 +14,7 @@
  >   * The overall game will have a menu where it will prompt the user for some basic information such as a nickname and gender. Later, during the battle phase the game will output another menu with move options which the user will input the order and the game will carry it out. The game will have a simple story and end after the first battle.
  
  > ### What are the three design patterns you will be using?
- >   #### Creational Pattern: Abstract Factory
+ >   #### Creational Pattern: Factory Method
  >	* This design pattern will allow us to create different types of creatures to battle against more efficiently. This pattern helps give the player more variety when going against the creatures. There will be different opponents randomly.
  >   #### Behavioral Pattern: Strategy
  >	* The PokeGuys have two different types of moves, a normal attack and a typed attack. The normal attack is just a regular attack that damages the enemy depending on a fixed damage number. The typed attack has a lower attack damage but will multiply if the opponent results to be weak against a certain element. The strategy pattern will allow to carry different algorithms for each attack.
