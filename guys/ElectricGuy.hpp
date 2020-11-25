@@ -17,6 +17,6 @@ class ElectricGuy : public Guy {
       return weakness;
     }
 
-}
+};
 
 #endif

@@ -14,7 +14,7 @@ class FireGuy : public Guy {
       return weakness;
     }
 
-}
+};
 
 
 #endif

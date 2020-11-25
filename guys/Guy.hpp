@@ -1,48 +1,46 @@
 #ifndef GUY_HPP
 #define GUY_HPP
 
-#include "neutralattack.hpp"
-#include "typedattack.hpp"
-#include "damagecalc.hpp"
+#include "../Attacks/NeutralAttack.hpp"
+#include "../Attacks/TypedAttack.hpp"
+#include "../Factory/MoveFactory.hpp"
+#include "../Attacks/Attack.hpp"
 
 using namespace std;
 
-class NeutralAttack();
-class TypedAttack();
-class MoveFactory();
-class DamageCalc();
+class NeutralAttack;
+class TypedAttack;
+class MoveFactory;
+class Attack;
 
-class Guy() {
+class Guy {
   protected:
-    moveFactory* f;
+    MoveFactory* f;
     NeutralAttack* n;
     TypedAttack* a;
     Attack* atk;
 
   public:
     Guy() {
-      moveFactory* = nullptr;
-      NeutralAttack* = nullptr;
-      TypedAttack* = nullptr;
-      DamageCalc* = nullptr; 
+      f = nullptr;
+      n = nullptr;
+      a = nullptr;
+      atk = nullptr;
     }
-    setFactory(moveFactory* f) {
+
+    void setFactory(MoveFactory* f) {
       this -> f = f;
     }
-    set_moves(){
+    void set_moves(){
       
     }
-    attack() {
-      atk -> attack();
+    void attack(Guy* opponent) {
+      atk -> atk(opponent);
     }
 
-    set_attack(Attack* atk) {
+    void set_attack(Attack* atk) {
       this -> atk = atk;
     }
-
-
-
-
 };
 
 

@@ -14,8 +14,7 @@ class GrassGuy : public Guy {
       return weakness;
     }
 
-}
-}
+};
 
 
 #endif
