@@ -22,7 +22,7 @@
  >	* Inside the strategy pattern attack, we additionally have classes to calculate damage numbers, Op, add, mult, to encapsulate numbers into a hierarchy and call the highest number in the hierarchy to evaluate.
 
 ## Class Diagram
- > <a href="https://imgbb.com/"><img src="https://i.ibb.co/0XVYp9m/pokeguys.png" alt="pokeguys" border="0" /></a>
+ > <a href="https://imgbb.com/"><img src="https://i.ibb.co/5RcX9Br/pokeguys.png" alt="pokeguys" border="0" /></a>
  > * The attack function is using the Strategy Pattern (abstract class Attack()) which can call the NormalAttackStrategy attack function or TypedAttackStrategy attack function.
  > * Each set of moves for each PokeGuy is created with the Factory Method, moveFactory() which the Guy class calls and sets its Neutral and Typed attack.
  > * Lastly, the Composite Pattern is called inside the Attack strategy where damage is grouped in Base* and which the evaluate function represents the top number in the hierarchy.
