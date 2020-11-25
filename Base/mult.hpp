@@ -28,3 +28,5 @@ class Mult : public Base {
           return sentence;
         }
 };
+
+#endif
