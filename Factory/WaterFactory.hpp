@@ -2,16 +2,17 @@
 #define __WATERFACTORY__
 
 #include "MoveFactory.hpp"
-#include "../Attacks/TypedAttack.hpp"
-#include "../Attacks/NeutralAttack.hpp"
 
 class WaterFactory : public  MoveFactory {
 	public:
+		WaterFactory() : MoveFactory() {}
 		virtual TypedAttack* createTypedMove() {
-			
+			TypedAttack* temp =  new WaterAttack("water", 30);
+			return temp;
 		}
 		virtual NeutralAttack* createNeutralMove() {
-
+			NeutralAttack* temp =  new DropAttack("normal", 50);
+			return temp;
 		}
 };
 
