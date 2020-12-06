@@ -9,8 +9,9 @@ class FireGuy : public Guy {
   public:
     FireGuy() : Guy() {
       weakness = "Water";
+      this -> f = new FireFactory();
     }
-    string getWeakness() {
+    virtual string getWeakness() {
       return weakness;
     }
 

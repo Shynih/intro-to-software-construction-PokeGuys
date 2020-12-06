@@ -3,8 +3,11 @@
 
 #include "../Attacks/NeutralAttack.hpp"
 #include "../Attacks/TypedAttack.hpp"
-#include "../Factory/MoveFactory.hpp"
 #include "../Attacks/Attack.hpp"
+#include "../Factory/ElectricFactory.hpp"
+#include "../Factory/FireFactory.hpp"
+#include "../Factory/GrassFactory.hpp"
+#include "../Factory/WaterFactory.hpp"
 
 using namespace std;
 
@@ -31,20 +34,28 @@ class Guy {
       Health = 200;
       isAlive = true;
     }
-
-    void setFactory(MoveFactory* f) {
-      this -> f = f;
+    void set_moves() {
+      n = f -> createNeutralMove();
+      a = f -> createTypedMove();
     }
-    void set_moves(){
-      
-    }
+    
     void attack(Guy* opponent) {
       atk -> atk(opponent);
     }
-
     void set_attack(Attack* atk) {
       this -> atk = atk;
     }
+    void setHealth(double health) {
+      this -> Health = health;
+    }
+    void setAlive(bool alive) {
+      this -> isAlive = alive;
+    }
+    bool is_alive() {
+      return isAlive;
+    }
+
+    virtual string getWeakness() = 0;
 };
 
 

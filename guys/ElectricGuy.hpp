@@ -12,8 +12,9 @@ class ElectricGuy : public Guy {
   public:
     ElectricGuy() : Guy() {
       weakness = "Grass";
+      this -> f = new ElectricFactory();
     }
-    string getWeakness() {
+    virtual string getWeakness() {
       return weakness;
     }
 
