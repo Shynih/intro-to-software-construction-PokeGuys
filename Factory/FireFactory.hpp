@@ -2,22 +2,6 @@
 #define __FIREFACTORY__
 
 #include "MoveFactory.hpp"
-<<<<<<< HEAD
-#include "../Attacks/TypedAttack.hpp"
-#include "../Attacks/NeutralAttack.hpp"
-
-class FireFactory : public MoveFactory {
-	public:
-		virtual TypedAttack* createTypedMove() {
-                
-		}
-		virtual NeutralAttack* createNeutralMove() {
-				            
-	        }
-};
-
-#endif
-=======
 
 class FireFactory : public MoveFactory {
 	public:
@@ -33,4 +17,3 @@ class FireFactory : public MoveFactory {
 };
 
 #endif
->>>>>>> 459e38d644feba111cfb46923958ffbfe34726d5
