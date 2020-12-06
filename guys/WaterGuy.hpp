@@ -8,7 +8,7 @@ class WaterGuy : public Guy {
     string weakness;
   public:
     WaterGuy() : Guy () {
-      weakness = "Grass";
+      weakness = "Electric";
       this -> f = new WaterFactory();
     }
     virtual string getWeakness() {

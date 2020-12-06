@@ -55,6 +55,12 @@ class Guy {
     bool is_alive() {
       return isAlive;
     }
+    TypedAttack* getTypedAttack()  {
+      return a;
+    }
+    NeutralAttack* getNeutralAttack() {
+      return n;
+    }
 
     virtual string getWeakness() = 0;
     void set_nickname(string nickname) : nickname(nickname) {}
