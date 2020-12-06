@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class TypedAttack() {
+class TypedAttack {
   protected:
     string type;
     int damage;
@@ -13,6 +13,8 @@ class TypedAttack() {
       this -> type = type;
       this -> damage = damage;
     }
+    string get_type() { return this->type; }
+    int get_damage() { return this->damage; }
 };
 
 

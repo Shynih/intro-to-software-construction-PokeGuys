@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class NeutralAttack() {
+class NeutralAttack {
   protected:
     string type;
     int damage;
@@ -13,6 +13,8 @@ class NeutralAttack() {
       this -> type = type;
       this -> damage = damage;
     }
+    string get_type() { return this->type; }
+    int get_damage() { return this->damage; }
 };
 
 
