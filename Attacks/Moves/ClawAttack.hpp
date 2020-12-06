@@ -3,12 +3,9 @@
 
 #include "../NeutralAttack.hpp"
 
-class ClawAttack() : public NeutralAttack {
+class ClawAttack : public NeutralAttack {
   public:
-    ClawAttack(string type, int damage) {
-      this -> type = type;
-      this -> damage = damage;
-    }
+    ClawAttack(string type, int damage) : NeutralAttack(type, damage) {}
 };
 
 

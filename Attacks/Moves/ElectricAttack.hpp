@@ -3,12 +3,9 @@
 
 #include "../TypedAttack.hpp"
 
-class ElectricAttack() : public TypedAttack {
+class ElectricAttack : public TypedAttack {
   public:
-    ElectricAttack(string type, int damage) {
-      this -> type = type;
-      this -> damage = damage;
-    }
+    ElectricAttack(string type, int damage) : TypedAttack(type, damage) {}
 };
 
 
