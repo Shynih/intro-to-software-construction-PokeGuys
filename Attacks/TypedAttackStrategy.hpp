@@ -6,16 +6,14 @@
 
 class Base;
 
-class TypedAttackStrategy() : public Attack {
+class TypedAttackStrategy: public Attack {
   private:
     Base* damage;
   public:
-    TypedAttackStrategy() : Attack(){};
-    virtual void atk(Guy* guy) {
+    TypedAttackStrategy(Guy* user) : Attack(user) {}
+    virtual void atk(Guy* opponent) {
 
     }
-}
-
-
+};
 
 #endif

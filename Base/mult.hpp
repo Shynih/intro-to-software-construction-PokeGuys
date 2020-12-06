@@ -3,7 +3,6 @@
 
 #include "base.hpp"
 #include "op.hpp"
-#include <iomanip>
 #include <sstream>
 
 class Mult : public Base {
@@ -28,3 +27,5 @@ class Mult : public Base {
           return sentence;
         }
 };
+
+#endif
