@@ -10,13 +10,14 @@ class ElectricGuy : public Guy {
   private:
     string weakness;
   public:
-    ElectricGuy() {
-      
+    ElectricGuy() : Guy() {
+      weakness = "Grass";
+      this -> f = new ElectricFactory();
     }
-    string getWeakness() {
+    virtual string getWeakness() {
       return weakness;
     }
 
-}
+};
 
 #endif

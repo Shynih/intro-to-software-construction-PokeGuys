@@ -7,14 +7,15 @@ class FireGuy : public Guy {
   private:
     string weakness;
   public:
-    FireGuy() {
-      
+    FireGuy() : Guy() {
+      weakness = "Water";
+      this -> f = new FireFactory();
     }
-    string getWeakness() {
+    virtual string getWeakness() {
       return weakness;
     }
 
-}
+};
 
 
 #endif
