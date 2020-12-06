@@ -13,21 +13,21 @@ class TypedAttackStrategy: public Attack {
     Base* damage;
   public:
     TypedAttackStrategy(Guy* user) : Attack(user) {
-      damage = new Op(user -> getNeutralAttack() -> getAttack());
+      damage = new Op(user -> get_damage());
     }
     virtual void atk(Guy* opponent) {
       Base* multiplier;
 
-      if (user -> getTypedAttack() -> getType() == "Water" && opponent -> getWeakness() == "Water") {
+      if (user -> get_type() == "Water" && opponent -> getWeakness() == "Water") {
         multiplier = new Op(2);
       }
-      else if (user -> getTypedAttack() -> getType() == "Fire" && opponent -> getWeakness() == "Fire") {
+      else if (user -> get_type() == "Fire" && opponent -> getWeakness() == "Fire") {
         multiplier = new Op(2);
       }
-      else if (user -> getTypedAttack() -> getType() == "Grass" && opponent -> getWeakness() == "Grass") {
+      else if (user -> get_type() == "Grass" && opponent -> getWeakness() == "Grass") {
         multiplier = new Op(2);
       }
-      else if (user -> getTypedAttack() -> getType() == "Electric" && opponent -> getWeakness() == "Electric") {
+      else if (user -> get_type() == "Electric" && opponent -> getWeakness() == "Electric") {
         multiplier = new Op(2);
       }
       else {
@@ -35,7 +35,7 @@ class TypedAttackStrategy: public Attack {
       }
 
       Base* newdamage = new Mult(damage, multiplier);
-      Base* opponentHealth = new Op(opponent -> health);
+      Base* opponentHealth = new Op(opponent -> Health);
       Base* afterdamage = new Sub(opponentHealth, newdamage);
       if (afterdamage -> evaluate() < 0) {
         user -> setAlive(false);

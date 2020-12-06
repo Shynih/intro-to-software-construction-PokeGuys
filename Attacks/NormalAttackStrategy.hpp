@@ -13,13 +13,13 @@ class NormalAttackStrategy : public Attack {
     Base* damage;
   public:
     NormalAttackStrategy(Guy* user) : Attack(user) {
-      damage = new Op(user -> getNeutralAttack() -> getAttack());
+      damage = new Op(user -> get_damage);
     }
     virtual void atk(Guy* opponent) {
-      Base* opponentHealth = new Op(opponent -> health);
+      Base* opponentHealth = new Op(opponent -> Health);
       Base* afterdamage = new Sub(opponentHealth, damage);
       if (afterdamage -> evaluate() < 0) {
-        user -> setAlive(false);
+        user -> isAlive(false);
         opponent -> setHealth(0);
       }
       else {

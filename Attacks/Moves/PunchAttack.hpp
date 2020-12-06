@@ -3,12 +3,9 @@
 
 #include "../NeutralAttack.hpp"
 
-class PunchAttack() : public NeutralAttack {
+class PunchAttack : public NeutralAttack {
   public:
-    PunchAttack(string type, int damage) {
-      this -> type = type;
-      this -> damage = damage;
-    }
+    PunchAttack(string type, int damage) : NeutralAttack(type, damage) {}
 };
 
 
