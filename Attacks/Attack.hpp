@@ -1,16 +1,19 @@
 #ifndef __ATTACK_HPP__
 #define __ATTACK_HPP__
 
-class Guy;
+#include "NeutralAttack.hpp"
+#include "TypedAttack.hpp"
 
-class Attack() {
+class Guy;
+class NeutralAttack;
+class TypedAttack;
+
+class Attack {
   protected:
-    NeutralAttack* n;
-    TypedAttack* a;
+    Guy* user;
   public:
-    Attack(NeutralAttack* n, TypedAttack* a) {
-      this -> n = n;
-      this -> a = a;
+    Attack(Guy* user) {
+      this -> user = user;
     }
     virtual void atk(Guy* guy) = 0;
 };

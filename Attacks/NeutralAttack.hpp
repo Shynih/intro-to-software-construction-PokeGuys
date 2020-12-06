@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class NeutralAttack() {
+class NeutralAttack {
   protected:
     string type;
     int damage;

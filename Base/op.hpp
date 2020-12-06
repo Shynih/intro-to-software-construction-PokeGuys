@@ -13,12 +13,12 @@ class Op : public Base {
       Op(double value) : Base() { this -> value = value; }
       virtual double evaluate() { return value; }
       virtual std::string stringify() {
-			  std::stringstream stream;
-			  std::string sentence;
+			std::stringstream stream;
+			std::string sentence;
 		  	stream << std::fixed << std::setprecision(1) << value;
 		  	sentence = stream.str();
-			  return sentence;
+			return sentence;
 		}
 };
 
-#endif //__OP_HPP__
+#endif 
