@@ -78,26 +78,26 @@ TEST(TypedAttackType, FireType) {
 TEST(NormalAttackTEST, ElectricTEST) {
     Guy* test = new ElectricGuy();
     test -> set_moves();
-    EXPECT_EQ(test -> getTypedAttack() -> get_type() , "normal");
-    EXPECT_EQ(test -> getTypedAttack() -> get_damage() , 50);
+    EXPECT_EQ(test -> getNeutralAttack() -> get_type() , "normal");
+    EXPECT_EQ(test -> getNeutralAttack() -> get_damage() , 50);
 }
 TEST(NormalAttackTEST, WaterTEST) {
     Guy* test = new WaterGuy();
     test -> set_moves();
-    EXPECT_EQ(test -> getTypedAttack() -> get_type() , "normal");
-    EXPECT_EQ(test -> getTypedAttack() -> get_damage() , 50);
+    EXPECT_EQ(test -> getNeutralAttack() -> get_type() , "normal");
+    EXPECT_EQ(test -> getNeutralAttack() -> get_damage() , 50);
 }
 TEST(NormalAttackTEST, GrassTEST) {
     Guy* test = new GrassGuy();
     test -> set_moves();
-    EXPECT_EQ(test -> getTypedAttack() -> get_type() , "normal");
-    EXPECT_EQ(test -> getTypedAttack() -> get_damage() , 50);
+    EXPECT_EQ(test -> getNeutralAttack() -> get_type() , "normal");
+    EXPECT_EQ(test -> getNeutralAttack() -> get_damage() , 50);
 }
 TEST(NormalAttackTEST, FireTEST) {
     Guy* test = new FireGuy();
     test -> set_moves();
-    EXPECT_EQ(test -> getTypedAttack() -> get_type() , "normal");
-    EXPECT_EQ(test -> getTypedAttack() -> get_damage() , 50);
+    EXPECT_EQ(test -> getNeutralAttack() -> get_type() , "normal");
+    EXPECT_EQ(test -> getNeutralAttack() -> get_damage() , 50);
 }
 
 #endif
