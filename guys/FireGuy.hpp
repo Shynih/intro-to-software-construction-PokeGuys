@@ -7,8 +7,8 @@ class FireGuy : public Guy {
   private:
     string weakness;
   public:
-    FireGuy() {
-      
+    FireGuy() : Guy() {
+      weakness = "Water";
     }
     string getWeakness() {
       return weakness;

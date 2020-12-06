@@ -19,6 +19,8 @@ class Guy {
     NeutralAttack* n;
     TypedAttack* a;
     Attack* atk;
+    bool isAlive;
+    double Health;
 
   public:
     Guy() {
@@ -26,6 +28,8 @@ class Guy {
       n = nullptr;
       a = nullptr;
       atk = nullptr;
+      Health = 200;
+      isAlive = true;
     }
 
     void setFactory(MoveFactory* f) {

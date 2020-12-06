@@ -7,14 +7,12 @@ class WaterGuy : public Guy {
   private:
     string weakness;
   public:
-    WaterGuy() {
-      
+    WaterGuy() : Guy () {
+      weakness = "Grass";
     }
     string getWeakness() {
       return weakness;
     }
 
-}
-
-
+};
 #endif
