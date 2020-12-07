@@ -37,11 +37,10 @@ class TypedAttackStrategy: public Attack {
       else {
         multiplier = new Op(1);
       }
-      Base* temp = damage;
-      damage = new Mult(damage, multiplier);
-      delete temp;
+
+      Base* newdamage = new Mult(damage, multiplier);
       Base* opponentHealth = new Op(opponent -> getHealth());
-      Base* afterdamage = new Sub(opponentHealth, damage);
+      Base* afterdamage = new Sub(opponentHealth, newdamage);
       if (afterdamage -> evaluate() < 0) {
         user -> setAlive(false);
         opponent -> setHealth(0);
@@ -49,9 +48,6 @@ class TypedAttackStrategy: public Attack {
       else {
         opponent -> setHealth(afterdamage -> evaluate());
       }
-    }
-    virtual Base* get_damage() {
-      return damage;
     }
 };
 
