@@ -63,8 +63,8 @@ class Guy {
     }
 
     virtual string getWeakness() = 0;
-    void set_nickname(string nickname) : nickname(nickname) {}
-    string get_nickname() { return nickname }
+    void set_nickname(string nickname) { this->nickname = nickname;  }
+    string get_nickname() { return nickname; }
 };
 
 
