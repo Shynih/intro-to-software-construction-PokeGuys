@@ -3,6 +3,7 @@
 
 #include "NeutralAttack.hpp"
 #include "TypedAttack.hpp"
+#include "../Base/base.hpp"
 
 class Guy;
 class NeutralAttack;
