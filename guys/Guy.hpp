@@ -62,6 +62,10 @@ class Guy {
       return n;
     }
 
+    double getHealth() {
+      return Health;
+    }
+
     virtual string getWeakness() = 0;
     void set_nickname(string nickname) { this->nickname = nickname;  }
     string get_nickname() { return nickname; }
