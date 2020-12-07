@@ -5,6 +5,10 @@
 #include "../Base/mult.hpp"
 #include "../Base/sub.hpp"
 #include "../Base/add.hpp"
+#include "../guys/ElectricGuy.hpp"
+#include "../guys/FireGuy.hpp"
+#include "../guys/GrassGuy.hpp"
+#include "../guys/WaterGuy.hpp"
 
 class Base;
 
@@ -13,21 +17,21 @@ class TypedAttackStrategy: public Attack {
     Base* damage;
   public:
     TypedAttackStrategy(Guy* user) : Attack(user) {
-      damage = new Op(user -> getNeutralAttack() -> getAttack());
+      damage = new Op(user -> getNeutralAttack() -> get_damage());
     }
     virtual void atk(Guy* opponent) {
       Base* multiplier;
 
-      if (user -> getTypedAttack() -> getType() == "Water" && opponent -> getWeakness() == "Water") {
+      if (user -> getTypedAttack() -> get_type() == "Water" && opponent -> getWeakness() == "Water") {
         multiplier = new Op(2);
       }
-      else if (user -> getTypedAttack() -> getType() == "Fire" && opponent -> getWeakness() == "Fire") {
+      else if (user -> getTypedAttack() -> get_type() == "Fire" && opponent -> getWeakness() == "Fire") {
         multiplier = new Op(2);
       }
-      else if (user -> getTypedAttack() -> getType() == "Grass" && opponent -> getWeakness() == "Grass") {
+      else if (user -> getTypedAttack() -> get_type() == "Grass" && opponent -> getWeakness() == "Grass") {
         multiplier = new Op(2);
       }
-      else if (user -> getTypedAttack() -> getType() == "Electric" && opponent -> getWeakness() == "Electric") {
+      else if (user -> getTypedAttack() -> get_type() == "Electric" && opponent -> getWeakness() == "Electric") {
         multiplier = new Op(2);
       }
       else {
@@ -35,7 +39,7 @@ class TypedAttackStrategy: public Attack {
       }
 
       Base* newdamage = new Mult(damage, multiplier);
-      Base* opponentHealth = new Op(opponent -> health);
+      Base* opponentHealth = new Op(opponent -> getHealth());
       Base* afterdamage = new Sub(opponentHealth, newdamage);
       if (afterdamage -> evaluate() < 0) {
         user -> setAlive(false);
