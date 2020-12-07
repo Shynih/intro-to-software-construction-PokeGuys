@@ -49,6 +49,9 @@ class TypedAttackStrategy: public Attack {
         opponent -> setHealth(afterdamage -> evaluate());
       }
     }
+    virtual Base* get_damage() {
+      return damage;
+    }
 };
 
 #endif

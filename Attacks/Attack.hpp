@@ -16,6 +16,7 @@ class Attack {
       this -> user = user;
     }
     virtual void atk(Guy* guy) = 0;
+    virtual Base* get_damage() = 0;
 };
 
 #endif
