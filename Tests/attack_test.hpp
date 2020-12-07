@@ -6,8 +6,8 @@
 #include "../guys/FireGuy.hpp"
 #include "../guys/GrassGuy.hpp"
 #include "../guys/WaterGuy.hpp"
-#include "NormalAttackStrategy.hpp"
-#include "TypedAttackStrategy.hpp"
+#include "../Attacks/NormalAttackStrategy.hpp"
+#include "../Attacks/TypedAttackStrategy.hpp"
 
 TEST(AttackTEST, EvsF) {
   Guy* user = new ElectricGuy();
