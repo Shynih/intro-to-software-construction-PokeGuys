@@ -37,8 +37,9 @@ class TypedAttackStrategy: public Attack {
       else {
         multiplier = new Op(1);
       }
-
-      Base* damage = new Mult(damage, multiplier);
+      Base* temp = damage;
+      damage = new Mult(damage, multiplier);
+      delete temp;
       Base* opponentHealth = new Op(opponent -> getHealth());
       Base* afterdamage = new Sub(opponentHealth, damage);
       if (afterdamage -> evaluate() < 0) {
