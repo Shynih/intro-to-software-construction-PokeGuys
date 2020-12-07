@@ -13,11 +13,16 @@ class TypedAttackStrategy: public Attack {
     Base* damage;
   public:
     TypedAttackStrategy(Guy* user) : Attack(user) {
+<<<<<<< HEAD
       damage = new Op(user -> get_damage());
+=======
+      damage = new Op(user -> getTypedAttack() -> get_damage());
+>>>>>>> cd39ace800369d1b74057d61e3ad5b0ed179cd48
     }
     virtual void atk(Guy* opponent) {
       Base* multiplier;
 
+<<<<<<< HEAD
       if (user -> get_type() == "Water" && opponent -> getWeakness() == "Water") {
         multiplier = new Op(2);
       }
@@ -28,6 +33,18 @@ class TypedAttackStrategy: public Attack {
         multiplier = new Op(2);
       }
       else if (user -> get_type() == "Electric" && opponent -> getWeakness() == "Electric") {
+=======
+      if (user -> getTypedAttack() -> get_type() == "water" && opponent -> getWeakness() == "Water") {
+        multiplier = new Op(2);
+      }
+      else if (user -> getTypedAttack() -> get_type() == "fire" && opponent -> getWeakness() == "Fire") {
+        multiplier = new Op(2);
+      }
+      else if (user -> getTypedAttack() -> get_type() == "grass" && opponent -> getWeakness() == "Grass") {
+        multiplier = new Op(2);
+      }
+      else if (user -> getTypedAttack() -> get_type() == "electric" && opponent -> getWeakness() == "Electric") {
+>>>>>>> cd39ace800369d1b74057d61e3ad5b0ed179cd48
         multiplier = new Op(2);
       }
       else {
