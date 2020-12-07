@@ -22,16 +22,16 @@ class TypedAttackStrategy: public Attack {
     virtual void atk(Guy* opponent) {
       Base* multiplier;
 
-      if (user -> getTypedAttack() -> get_type() == "Water" && opponent -> getWeakness() == "Water") {
+      if (user -> getTypedAttack() -> get_type() == "water" && opponent -> getWeakness() == "Water") {
         multiplier = new Op(2);
       }
-      else if (user -> getTypedAttack() -> get_type() == "Fire" && opponent -> getWeakness() == "Fire") {
+      else if (user -> getTypedAttack() -> get_type() == "fire" && opponent -> getWeakness() == "Fire") {
         multiplier = new Op(2);
       }
-      else if (user -> getTypedAttack() -> get_type() == "Grass" && opponent -> getWeakness() == "Grass") {
+      else if (user -> getTypedAttack() -> get_type() == "grass" && opponent -> getWeakness() == "Grass") {
         multiplier = new Op(2);
       }
-      else if (user -> getTypedAttack() -> get_type() == "Electric" && opponent -> getWeakness() == "Electric") {
+      else if (user -> getTypedAttack() -> get_type() == "electric" && opponent -> getWeakness() == "Electric") {
         multiplier = new Op(2);
       }
       else {
