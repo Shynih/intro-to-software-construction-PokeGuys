@@ -8,5 +8,9 @@ ADD_EXECUTABLE(test
     Tests/unit_tests.cpp
 )
 
+ADD_EXECUTABLE(PokeGuys
+    main.cpp
+)
+
 TARGET_LINK_LIBRARIES(test gtest)
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)

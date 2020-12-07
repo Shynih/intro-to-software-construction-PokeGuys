@@ -24,6 +24,7 @@ class Guy {
     Attack* atk;
     bool isAlive;
     double Health;
+    string nickname;
 
   public:
     Guy() {
@@ -54,8 +55,20 @@ class Guy {
     bool is_alive() {
       return isAlive;
     }
+    TypedAttack* getTypedAttack()  {
+      return a;
+    }
+    NeutralAttack* getNeutralAttack() {
+      return n;
+    }
+
+    double getHealth() {
+      return Health;
+    }
 
     virtual string getWeakness() = 0;
+    void set_nickname(string nickname) { this->nickname = nickname;  }
+    string get_nickname() { return nickname; }
 };
 
 
