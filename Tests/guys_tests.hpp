@@ -99,5 +99,25 @@ TEST(NormalAttackTEST, FireTEST) {
     EXPECT_EQ(test -> getNeutralAttack() -> get_type() , "normal");
     EXPECT_EQ(test -> getNeutralAttack() -> get_damage() , 50);
 }
+TEST(ElectricNickname, SetterAndGetter) {
+    Guy* test = new ElectricGuy();
+    test->set_nickname("sparky");
+    EXPECT_EQ(test->get_nickname(), "sparky");
+}
+TEST(FireNickname, SetterAndGetter) {
+    Guy* test = new FireGuy();
+    test->set_nickname("burny");
+    EXPECT_EQ(test->get_nickname(), "burny");
+}
+TEST(GrassNickname, SetterAndGetter) {
+    Guy* test = new GrassGuy();
+    test->set_nickname("leafy");
+    EXPECT_EQ(test->get_nickname(), "leafy");
+}
+TEST(WaterNickname, SetterAndGetter) {
+    Guy* test = new WaterGuy();
+    test->set_nickname("watery");
+    EXPECT_EQ(test->get_nickname(), "watery");
+}
 
 #endif

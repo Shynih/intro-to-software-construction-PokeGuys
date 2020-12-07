@@ -17,7 +17,7 @@ class TypedAttackStrategy: public Attack {
     Base* damage;
   public:
     TypedAttackStrategy(Guy* user) : Attack(user) {
-      damage = new Op(user -> getNeutralAttack() -> get_damage());
+      damage = new Op(user -> getTypedAttack() -> get_damage());
     }
     virtual void atk(Guy* opponent) {
       Base* multiplier;
