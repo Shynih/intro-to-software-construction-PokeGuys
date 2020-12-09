@@ -8,6 +8,8 @@
 
 using namespace std;
 
+void wait();
+
 int main() {
 
 	srand(time(0));
@@ -79,12 +81,18 @@ int main() {
 		playerGuy->set_nickname(nickname);
 	}
 	cout << endl;
+	
+	string getBuffer;
 
 	cout << "Congratulations on obtaining your first Guy! With them by your side, " << endl;
 	cout << "you'll be able to travel all over the world, searching for other Guys to battle." << endl;
 	cout << "But don't get too far ahead of yourself! There are some things you need to know about battles " << endl;
 	cout << "that will give you a leg up before you set off!" << endl << endl;
 	
+	getline(cin, getBuffer);
+	cout << "Press ENTER to continue. . ." << endl;
+	wait();
+
 	cout << "Type Effectiveness" << endl;
 	cout << "In the same way that water is ideal for putting out fires while grass does the opposite, Guys " << endl;
 	cout << "carry with them inherent weaknesses. Any attack that a Guy is weak to will do twice the damage!" << endl;
@@ -93,14 +101,20 @@ int main() {
 	cout << "Electric's weakness is Grass!" << endl;
 	cout << "Fire's weakness is Water!" << endl;
 	cout << "Grass' weakness is Fire!" << endl;
-	cout << "Water's weakness is Electric!" << endl << endl;
+	cout << "Water's weakness is Electric!" << endl;// << endl;
+	
+	wait();
 
 	cout << "Moveset" << endl;
 	cout << "Every guy has two moves: One neutral attack dealing 50 damage, and another corresponding " << endl;
-	cout << "to their type that deals 30 damage. Pair this knowlege with type effectiveness to take on  opponents " << endl;
-	cout << "in a more effective way!" << endl << endl;
+	cout << "to their type that deals 30 damage. Pair this knowlege with type effectiveness to take on opponents " << endl;
+	cout << "in a more effective way!" << endl;// << endl;
 
-	cout << "Enough talking, its time to get started on your adventure! Take your first step into the wild grass!" << endl;
+	wait();
+
+	cout << "Enough talking, its time to get started on your adventure! Take your first step into the wild grass!";// << endl;
+
+	wait();
 
 	cout << "              O" << endl;
 	cout <<	"              {____________________________________" << endl;
@@ -132,7 +146,7 @@ int main() {
 
 	cout << "You've encountered a wild " << opponentGuy->get_nickname() << "!" <<  endl;
 
-	while (playerGuy->is_alive() && opponentGuy->is_alive()) {
+	/*while (playerGuy->is_alive() && opponentGuy->is_alive()) {
 		//the battle goes here, i don't know how attack works
 		cout << "Your move! Your attacks are:" << endl;
 		cout << playerGuy->get_typed_atk_name() << endl << playerGuy->get_neutral_atk_name() << endl;
@@ -140,40 +154,26 @@ int main() {
 		cout << "Your attack dealt ___ damage to the opponent! They have ___ HP remaining." << endl;
 			//call the opponent's randomized attack here
 		cout << "The opponent's attack dealt __ damage. You have ___ HP remaining." << endl;
-	}
+	}*/
 	
-	cout << "That was a close one! Come on, let's head to the next town to heal your Guy- Wait!" << endl;
-	cout << "Where are you going?!" << endl;
-	cout << " . . . " << endl;
-	cout << "Y-You don't think you're cut out to become a Guy trainer after all??" << endl;
-	cout << "You'd rather spend your days at home, treating your " << playerGuy->get_nickname() << " as a pet??" << endl;
-	cout << " . . . " << endl;
+	cout << "That was a close one! Come on, let's head to the next town to heal your Guy- Wait!";// << endl;
+	wait();
+	cout << "Where are you going?!";// << endl;
+	wait();
+	cout << " . . . ";// << endl;
+	wait();
+	cout << "Y-You don't think you're cut out to become a Guy trainer after all??";// << endl;
+	wait();
+	cout << "You'd rather spend your days at home, treating your " << playerGuy->get_nickname() << " as a pet??";// << endl;
+	wait();
+	cout << " . . . ";// << endl;
+	wait();
 	cout << "I see. If that's the decision you've come to, I'll do nothing to stop you. As long as you treat your Guy with love and respect, you may do as you please." << endl;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		
 	return 0;
 }
 
+void wait() {
+	//cout << "Press ENTER to continue. . ." << endl;
+	cin.ignore(numeric_limits <streamsize>::max(), '\n');
+}
