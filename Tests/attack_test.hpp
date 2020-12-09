@@ -947,5 +947,4 @@ TEST(GrassAttackDamage, Typed) {
         test->attack(test1);
         EXPECT_EQ(test->getAttack()->getDamage()->evaluate(), 30);
 }
-
 #endif
