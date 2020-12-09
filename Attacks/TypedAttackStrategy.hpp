@@ -42,7 +42,7 @@ class TypedAttackStrategy: public Attack {
       Base* opponentHealth = new Op(opponent -> getHealth());
       Base* afterdamage = new Sub(opponentHealth, newdamage);
       if (afterdamage -> evaluate() <= 0) {
-        user -> setAlive(false);
+        opponent -> setAlive(false);
         opponent -> setHealth(0);
       }
       else {
