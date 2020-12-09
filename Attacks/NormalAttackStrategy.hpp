@@ -22,7 +22,7 @@ class NormalAttackStrategy : public Attack {
     virtual void atk(Guy* opponent) {
       Base* opponentHealth = new Op(opponent -> getHealth());
       Base* afterdamage = new Sub(opponentHealth, damage);
-      if (afterdamage -> evaluate() < 0) {
+      if (afterdamage -> evaluate() =< 0) {
         user -> setAlive(false);
         opponent -> setHealth(0);
       }
