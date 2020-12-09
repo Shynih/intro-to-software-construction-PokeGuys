@@ -30,6 +30,9 @@ class NormalAttackStrategy : public Attack {
         opponent -> setHealth(afterdamage -> evaluate());
       }
     }
+    virtual Base* getDamage() {
+      return damage;
+    }
 };
 
 #endif

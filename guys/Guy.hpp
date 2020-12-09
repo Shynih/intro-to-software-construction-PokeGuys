@@ -63,6 +63,9 @@ class Guy {
     NeutralAttack* getNeutralAttack() {
       return n;
     }
+    Attack* getAttack() {
+      return atk;
+    }
 
     double getHealth() {
       return Health;

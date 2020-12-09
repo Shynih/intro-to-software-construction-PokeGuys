@@ -48,6 +48,10 @@ class TypedAttackStrategy: public Attack {
       else {
         opponent -> setHealth(afterdamage -> evaluate());
       }
+      damage = newdamage;
+    }
+    virtual Base* getDamage() {
+      return damage;
     }
 };
 

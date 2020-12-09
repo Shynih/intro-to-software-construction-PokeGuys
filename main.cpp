@@ -2,6 +2,8 @@
 #include "guys/FireGuy.hpp"
 #include "guys/GrassGuy.hpp"
 #include "guys/WaterGuy.hpp" 
+#include "Attacks/NormalAttackStrategy.hpp"
+#include "Attacks/TypedAttackStrategy.hpp"
 #include <iostream>
 #include <ctime>
 #include <limits>
@@ -9,6 +11,8 @@
 using namespace std;
 
 void wait();
+void playerAttack(Guy* user, Guy* opponent);
+void opponentAttack(Guy* user, Guy* opponent);
 
 int main() {
 
@@ -40,13 +44,14 @@ int main() {
 		playerGuy = new FireGuy();
 	}
 	if(guySelection == "3") {
-         	guySelection = "GrassGuy";
-	        playerGuy = new GrassGuy();
-        }
+        guySelection = "GrassGuy";
+	    playerGuy = new GrassGuy();
+    }
 	if(guySelection == "4") {
-         	guySelection = "WaterGuy";
-	        playerGuy = new WaterGuy();
-        }
+        guySelection = "WaterGuy";
+	    playerGuy = new WaterGuy();
+    }
+	playerGuy -> set_moves();
 	
 	string userInput;
 	bool validInput = false;
@@ -135,26 +140,28 @@ int main() {
 		opponentGuy = new FireGuy();
 	}
 	if(randomOneToFour == 3) {
-         	guySelection = "GrassGuy";
-	        opponentGuy = new GrassGuy();
-        }
+		guySelection = "GrassGuy";
+		opponentGuy = new GrassGuy();
+	}
 	if(randomOneToFour == 4) {
-         	guySelection = "WaterGuy";
-	        opponentGuy = new WaterGuy();
-        }	
+		guySelection = "WaterGuy";
+		opponentGuy = new WaterGuy();
+	}	
+	opponentGuy -> set_moves();
 	opponentGuy->set_nickname(guySelection);
 
 	cout << "You've encountered a wild " << opponentGuy->get_nickname() << "!" <<  endl;
 
-	/*while (playerGuy->is_alive() && opponentGuy->is_alive()) {
+	while (playerGuy->is_alive() && opponentGuy->is_alive()) {
 		//the battle goes here, i don't know how attack works
-		cout << "Your move! Your attacks are:" << endl;
-		cout << playerGuy->get_typed_atk_name() << endl << playerGuy->get_neutral_atk_name() << endl;
-			//implement attack selection here
-		cout << "Your attack dealt ___ damage to the opponent! They have ___ HP remaining." << endl;
+		playerAttack(playerGuy, opponentGuy);
+
+		if (playerGuy -> is_alive() == false || opponentGuy -> is_alive() == false) {
+			break;
+		}
 			//call the opponent's randomized attack here
-		cout << "The opponent's attack dealt __ damage. You have ___ HP remaining." << endl;
-	}*/
+		opponentAttack(playerGuy, opponentGuy);
+	}
 	
 	cout << "That was a close one! Come on, let's head to the next town to heal your Guy- Wait!";// << endl;
 	wait();
@@ -178,3 +185,52 @@ void wait() {
 	cin.ignore(numeric_limits <streamsize>::max(), '\n');
 }
 
+void playerAttack(Guy* playerGuy, Guy* opponentGuy) {
+	string userInput;
+	cout << "Your move! Your attacks are:" << endl;
+	cout << "1. " << playerGuy->get_typed_atk_name() << endl << "2. " << playerGuy->get_neutral_atk_name() << endl;
+	while (userInput != "1" || userInput != "2") {
+		cout << "What are you gonna do?" << endl;
+		cin >> userInput;
+		if (userInput == "1" || userInput == "2") {
+			break;
+		}
+	}
+	if (userInput == "1") {
+		Attack* typed = new TypedAttackStrategy(playerGuy);
+		playerGuy -> set_attack(typed);
+		playerGuy -> attack(opponentGuy);
+		cout << "Your attack dealt " << 
+			playerGuy -> getAttack() -> getDamage() -> evaluate()
+			<< " damage to the opponent! They have " << opponentGuy -> getHealth() << " HP remaining." << endl;
+		
+	}
+	if (userInput == "2") {
+		Attack* normal = new NormalAttackStrategy(playerGuy);
+		playerGuy -> set_attack(normal);
+		playerGuy -> attack(opponentGuy);
+		cout << "Your attack dealt " << 
+			playerGuy -> getAttack() -> getDamage() -> evaluate()
+			<< " damage to the opponent! They have " << opponentGuy -> getHealth() << " HP remaining." << endl;
+	}
+	
+}
+void opponentAttack(Guy* user, Guy* opponentGuy) {
+	int random = rand() % 2 + 1;
+	if (random == 1) {
+		Attack* typed = new TypedAttackStrategy(user);
+		opponentGuy -> set_attack(typed);
+		opponentGuy -> attack(user);
+		cout << "The opponent's attack dealt "
+			<< opponentGuy -> getAttack() -> getDamage() -> evaluate() 
+			<<" damage. You have " << user -> getHealth()<<  " HP remaining." << endl;
+	}
+	if (random == 2) {
+		Attack* typed = new NormalAttackStrategy(user);
+		opponentGuy -> set_attack(typed);
+		opponentGuy -> attack(user);
+		cout << "The opponent's attack dealt "
+			<< opponentGuy -> getAttack() -> getDamage() -> evaluate() 
+			<<" damage. You have " << user -> getHealth()<<  " HP remaining." << endl;
+	}
+}

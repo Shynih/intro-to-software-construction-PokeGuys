@@ -7,6 +7,7 @@
 class Guy;
 class NeutralAttack;
 class TypedAttack;
+class Base;
 
 class Attack {
   protected:
@@ -16,6 +17,7 @@ class Attack {
       this -> user = user;
     }
     virtual void atk(Guy* guy) = 0;
+    virtual Base* getDamage() = 0;
 };
 
 #endif
