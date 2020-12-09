@@ -119,5 +119,38 @@ TEST(WaterNickname, SetterAndGetter) {
     test->set_nickname("watery");
     EXPECT_EQ(test->get_nickname(), "watery");
 }
+TEST(ElectricAttacks, Neutral) {
+    Guy* test = new ElectricGuy();
+    EXPECT_EQ(test->get_neutral_atk_name(), "Ram");
+}
+TEST(FireAttacks, Neutral) {
+    Guy* test = new FireGuy();
+    EXPECT_EQ(test->get_neutral_atk_name(), "Scratch");
+}
+TEST(GrassAttacks, Neutral) {
+    Guy* test = new GrassGuy();
+    EXPECT_EQ(test->get_neutral_atk_name(), "Punch");
+}
+TEST(WaterAttacks, Neutral) {
+    Guy* test = new WaterGuy();
+    EXPECT_EQ(test->get_neutral_atk_name(), "Dropkick");
+}
+TEST(ElectricAttacks, Typed) {
+    Guy* test = new ElectricGuy();
+    EXPECT_EQ(test->get_typed_atk_name(), "Thunderbolt");
+}
+TEST(FireAttacks, Typed) {
+    Guy* test = new FireGuy();
+    EXPECT_EQ(test->get_typed_atk_name(), "Flamethrower");
+}
+TEST(GrassAttacks, Typed) {
+    Guy* test = new GrassGuy();
+    EXPECT_EQ(test->get_typed_atk_name(), "Leaf Blade");
+}
+TEST(WaterAttacks, Typed) {
+    Guy* test = new WaterGuy();
+    EXPECT_EQ(test->get_typed_atk_name(), "Hydro Blast");
+}
+
 
 #endif
