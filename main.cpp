@@ -139,7 +139,7 @@ int main() {
 			//implement attack selection here
 		cout << "Your attack dealt ___ damage to the opponent! They have ___ HP remaining." << endl;
 			//call the opponent's randomized attack here
-		cout << "The opponent's attack dealt __ damage. You have ___ HP remaining."
+		cout << "The opponent's attack dealt __ damage. You have ___ HP remaining." << endl;
 	}
 	
 	cout << "That was a close one! Come on, let's head to the next town to heal your Guy- Wait!" << endl;
