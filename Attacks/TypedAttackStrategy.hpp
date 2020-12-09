@@ -41,8 +41,8 @@ class TypedAttackStrategy: public Attack {
       Base* newdamage = new Mult(damage, multiplier);
       Base* opponentHealth = new Op(opponent -> getHealth());
       Base* afterdamage = new Sub(opponentHealth, newdamage);
-      if (afterdamage -> evaluate() < 0) {
-        user -> setAlive(false);
+      if (afterdamage -> evaluate() <= 0) {
+        opponent -> setAlive(false);
         opponent -> setHealth(0);
       }
       else {
