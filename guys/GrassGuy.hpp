@@ -10,6 +10,8 @@ class GrassGuy : public Guy {
     GrassGuy() : Guy() {
       this -> f = new GrassFactory();
       weakness = "Fire";
+      typedAtkName = "Leaf Blade";
+      neutralAtkName = "Punch";
     }
     virtual string getWeakness() {
       return weakness;

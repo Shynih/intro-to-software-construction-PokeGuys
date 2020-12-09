@@ -10,6 +10,8 @@ class WaterGuy : public Guy {
     WaterGuy() : Guy () {
       weakness = "Electric";
       this -> f = new WaterFactory();
+      typedAtkName = "Hydro Blast";
+      neutralAtkName = "Dropkick";
     }
     virtual string getWeakness() {
       return weakness;
