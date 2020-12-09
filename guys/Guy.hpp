@@ -25,6 +25,8 @@ class Guy {
     bool isAlive;
     double Health;
     string nickname;
+    string typedAtkName;
+    string neutralAtkName;
 
   public:
     Guy() {
@@ -69,6 +71,8 @@ class Guy {
     virtual string getWeakness() = 0;
     void set_nickname(string nickname) { this->nickname = nickname;  }
     string get_nickname() { return nickname; }
+    string get_neutral_atk_name() { return neutralAtkName; }
+    string get_typed_atk_name() {return typedAtkName; }
 };
 
 

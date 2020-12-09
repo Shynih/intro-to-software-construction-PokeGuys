@@ -13,6 +13,8 @@ class ElectricGuy : public Guy {
     ElectricGuy() : Guy() {
       weakness = "Grass";
       this -> f = new ElectricFactory();
+      typedAtkName = "Thunderbolt";
+      neutralAtkName = "Ram";
     }
     virtual string getWeakness() {
       return weakness;
