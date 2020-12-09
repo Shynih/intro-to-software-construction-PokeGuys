@@ -867,5 +867,85 @@ TEST(AttackTEST, FightEvsE) {
   EXPECT_EQ(user->getHealth(), 50);
   EXPECT_EQ(user->is_alive(), true);
 }
+TEST(ElectricAttackDamage, Neutral){
+	Guy* test = new ElectricGuy();
+	Guy* test1 = new WaterGuy();
+	test->set_moves();
+	test1->set_moves();
+	Attack* neutral = new NormalAttackStrategy(test);
+	test->set_attack(neutral);
+	test->attack(test1);
+	EXPECT_EQ(test->getAttack()->getDamage()->evaluate(), 50);
+}
+TEST(ElectricAttackDamage, Typed) {
+	Guy* test = new ElectricGuy();
+        Guy* test1 = new WaterGuy();
+        test->set_moves();
+        test1->set_moves();
+        Attack* typed = new TypedAttackStrategy(test);
+	test->set_attack(typed);
+	test->attack(test1);
+        EXPECT_EQ(test->getAttack()->getDamage()->evaluate(), 60);
+}
+TEST(FireAttackDamage, Neutral){
+        Guy* test = new FireGuy();
+        Guy* test1 = new WaterGuy();
+        test->set_moves();
+        test1->set_moves();
+        Attack* neutral = new NormalAttackStrategy(test);
+        test->set_attack(neutral);
+        test->attack(test1);
+        EXPECT_EQ(test->getAttack()->getDamage()->evaluate(), 50);
+}
+TEST(FireAttackDamage, Typed) {
+        Guy* test = new FireGuy();
+        Guy* test1 = new GrassGuy();
+        test->set_moves();
+        test1->set_moves();
+        Attack* typed = new TypedAttackStrategy(test);
+        test->set_attack(typed);
+        test->attack(test1);
+        EXPECT_EQ(test->getAttack()->getDamage()->evaluate(), 60);
+}
+TEST(WaterAttackDamage, Neutral){
+        Guy* test = new WaterGuy();
+        Guy* test1 = new WaterGuy();
+        test->set_moves();
+        test1->set_moves();
+        Attack* neutral = new NormalAttackStrategy(test);
+        test->set_attack(neutral);
+        test->attack(test1);
+        EXPECT_EQ(test->getAttack()->getDamage()->evaluate(), 50);
+}
+TEST(WaterAttackDamage, Typed) {
+        Guy* test = new WaterGuy();
+        Guy* test1 = new WaterGuy();
+        test->set_moves();
+        test1->set_moves();
+        Attack* typed = new TypedAttackStrategy(test);
+        test->set_attack(typed);
+        test->attack(test1);
+        EXPECT_EQ(test->getAttack()->getDamage()->evaluate(), 30);
+}
+TEST(GrassAttackDamage, Neutral){
+        Guy* test = new GrassGuy();
+        Guy* test1 = new WaterGuy();
+        test->set_moves();
+        test1->set_moves();
+        Attack* neutral = new NormalAttackStrategy(test);
+        test->set_attack(neutral);
+        test->attack(test1);
+        EXPECT_EQ(test->getAttack()->getDamage()->evaluate(), 50);
+}
+TEST(GrassAttackDamage, Typed) {
+        Guy* test = new GrassGuy();
+        Guy* test1 = new WaterGuy();
+        test->set_moves();
+        test1->set_moves();
+        Attack* typed = new TypedAttackStrategy(test);
+        test->set_attack(typed);
+        test->attack(test1);
+        EXPECT_EQ(test->getAttack()->getDamage()->evaluate(), 30);
+}
 
 #endif
