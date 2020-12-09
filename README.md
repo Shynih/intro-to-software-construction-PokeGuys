@@ -49,8 +49,9 @@
  
  ## Installation/Usage
  > Instructions on installing and running your application
+ >	* To install and run this application you would first download all the files. Then you would run main.cpp to play. ./a.exe for windows ./a.out for mac.
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
- >	* For testing we make multiple files
+ >	* For testing we make multiple files such as attack_test.hpp, base_test.hpp, factor_tests.cpp, guys_test.hpp, and unit_test.cpp to make sure each class and its functions work. We made 106 tests in total using Googletest- Google Testing and Mocking Framework.
  
  
