@@ -177,3 +177,4 @@ void wait() {
 	//cout << "Press ENTER to continue. . ." << endl;
 	cin.ignore(numeric_limits <streamsize>::max(), '\n');
 }
+
